@@ -10,7 +10,7 @@ router.post('/start_python',
           var arg1=req.body.arg1;
           var arg2=req.body.arg2;
           var options = {
-            mode: 'text',
+            mode: 'json',
             pythonPath: '/usr/bin/python',
             pythonOptions: ['-u'],
             scriptPath: '/opt/01work/Nodes/myapp',
@@ -24,7 +24,14 @@ router.post('/start_python',
             console.log('results: %j', results);
 
           //res.json(results);
-          res.render('exploit',{ info : JSON.stringify(results)});
+          //res.render('test_json',{ info : JSON.stringify(results)});
+
+
+
+          console.log(results[0]);
+
+
+          res.render('exploit',{ info : results});
 
       });
 

@@ -1,0 +1,28 @@
+
+      <tbody>
+
+        <script type='text/javascript'> var rows =<%-JSON.stringify(info)%>
+
+            alert(rows);
+
+            var test=JSON.stringify(rows);
+            var unbout=JSON.parse(test);
+            alert(unbout.values());
+
+            <% for (i = 1; i < 3; i++) {  %>
+
+              <%var obj=info[0][i]%>
+
+                <% for (var prop in obj) { %>
+
+                  <%= prop  %>
+                  <%= obj[prop]%>
+                <% }
+
+            } %>  
+            }
+    </script>
+
+
+
+      </tbody>
